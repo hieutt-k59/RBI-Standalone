@@ -54,7 +54,7 @@
             this.chkCylicOperation = new System.Windows.Forms.CheckBox();
             this.chkContainsDeadlegs = new System.Windows.Forms.CheckBox();
             this.chkAministrativeControl = new System.Windows.Forms.CheckBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblVolume = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblMinReqTem = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             this.groupBox1.Controls.Add(this.chkCylicOperation);
             this.groupBox1.Controls.Add(this.chkContainsDeadlegs);
             this.groupBox1.Controls.Add(this.chkAministrativeControl);
-            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.lblVolume);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label17);
@@ -123,7 +123,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lblMinReqTem);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label8);
@@ -417,15 +417,15 @@
             this.chkAministrativeControl.CheckedChanged += new System.EventHandler(this.txtMinRequiredTemperature_TextChanged);
             this.chkAministrativeControl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chkAministrativeControl_KeyDown);
             // 
-            // label23
+            // lblVolume
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(417, 369);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(25, 15);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "m3";
+            this.lblVolume.AutoSize = true;
+            this.lblVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVolume.Location = new System.Drawing.Point(417, 369);
+            this.lblVolume.Name = "lblVolume";
+            this.lblVolume.Size = new System.Drawing.Size(25, 15);
+            this.lblVolume.TabIndex = 0;
+            this.lblVolume.Text = "m3";
             // 
             // label22
             // 
@@ -580,16 +580,16 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "PWHT";
             // 
-            // label10
+            // lblMinReqTem
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(716, 128);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "⁰C";
+            this.lblMinReqTem.AutoSize = true;
+            this.lblMinReqTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinReqTem.ForeColor = System.Drawing.Color.Black;
+            this.lblMinReqTem.Location = new System.Drawing.Point(716, 128);
+            this.lblMinReqTem.Name = "lblMinReqTem";
+            this.lblMinReqTem.Size = new System.Drawing.Size(17, 13);
+            this.lblMinReqTem.TabIndex = 0;
+            this.lblMinReqTem.Text = "⁰C";
             // 
             // label9
             // 
@@ -683,7 +683,7 @@
         private System.Windows.Forms.CheckBox chkCylicOperation;
         private System.Windows.Forms.CheckBox chkContainsDeadlegs;
         private System.Windows.Forms.CheckBox chkAministrativeControl;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblVolume;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label17;
@@ -699,7 +699,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMinReqTem;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label8;

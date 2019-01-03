@@ -17,7 +17,7 @@ namespace RBI.DAL.MSSQL
             SqlConnection conn = MSSQLDBUtils.GetDBConnection();
             conn.Open();
             String sql = "USE [rbi]" +
-                           "INSERT INTO [dbo].[USER_GROUPS]" +
+                           "INSERT INTO [dbo].[UNITS]" +
                            "([UnitID]" +
                            ",[UnitName]" +
                            ",[SelectedUnit])" +
@@ -48,7 +48,7 @@ namespace RBI.DAL.MSSQL
                 SqlConnection conn = MSSQLDBUtils.GetDBConnection();
                 conn.Open();
                 String sql = "USE [rbi]" +
-                              "UPDATE [dbo].[USER_GROUPS] " +
+                              "UPDATE [dbo].[UNITS] " +
                               "SET[UnitID] = '" + UnitID + "'" +
                               ",[UnitName] = '" + UnitName + "'" +
                               ",[SelectedUnit] = '" + SelectedUnit + "'" +
@@ -70,13 +70,42 @@ namespace RBI.DAL.MSSQL
                     
                 }
             }
-        } 
-        
+        }
+
+        public void edit(String UnitName, String SelectedUnit)
+        {
+            {
+                SqlConnection conn = MSSQLDBUtils.GetDBConnection();
+                conn.Open();
+                String sql = "USE [rbi]" +
+                              "UPDATE [dbo].[UNITS] " +
+                              "SET " +
+                              "[SelectedUnit] = '" + SelectedUnit + "'" +
+                              " WHERE [UnitName] = '" + UnitName + "'";
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = sql;
+                    cmd.Connection = conn;
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "EDIT FAIL!");
+                }
+                finally
+                {
+                    conn.Close();
+
+                }
+            }
+        }
+
         public void delete(int UnitID)
         {
             SqlConnection conn = MSSQLDBUtils.GetDBConnection();
             conn.Open();
-            String sql = "USE [rbi] DELETE FROM [dbo].[USER_GROUPS] WHERE [UnitID] = '" + UnitID + "'";
+            String sql = "USE [rbi] DELETE FROM [dbo].[UNITS] WHERE [UnitID] = '" + UnitID + "'";
             try
             {
                 SqlCommand cmd = new SqlCommand();
@@ -137,6 +166,42 @@ namespace RBI.DAL.MSSQL
             {
                 conn.Close();
                 
+            }
+            return list;
+        }
+        public List<string> getSelectedUnit()
+        {
+            SqlConnection conn = MSSQLDBUtils.GetDBConnection();
+            conn.Open();
+            List<string> list = new List<string>();
+            string obj = null;
+            String sql = "Use [rbi] " + "SELECT" + "[SelectedUnit]" + "  FROM [rbi].[dbo].[UNITS]" + " ";
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                using (DbDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader.HasRows)
+                        {
+                            obj = "";
+                            obj = reader.GetString(0);
+                            list.Add(obj);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "GET DATA FAIL!");
+            }
+            finally
+            {
+                conn.Close();
+
             }
             return list;
         }

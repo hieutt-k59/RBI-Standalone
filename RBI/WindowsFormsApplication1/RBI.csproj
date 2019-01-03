@@ -199,6 +199,7 @@
     <Compile Include="BUS\BUSMSSQL\USER_PERMISSIONS_BUS.cs" />
     <Compile Include="BUS\BUSMSSQL\USER_PERMISSION_LIST_BUS.cs" />
     <Compile Include="BUS\BUSMSSQL_CAL\BUS_TOXIC.cs" />
+    <Compile Include="BUS\BUSMSSQL_CAL\BUS_UNITS.cs" />
     <Compile Include="BUS\BUSMSSQL_CAL\MSSQL_CA_CAL.cs" />
     <Compile Include="BUS\BUSMSSQL_CAL\MSSQL_DM_CAL.cs" />
     <Compile Include="BUS\BUSXML\ReadXML.cs" />
@@ -395,6 +396,12 @@
     <Compile Include="Object\ucTabNormal.cs" />
     <Compile Include="Object\ucTabTank.cs" />
     <Compile Include="PRE\ITEM\jtree.cs" />
+    <Compile Include="PRE\subForm\InputDataForm\frmUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRE\subForm\InputDataForm\frmUnits.Designer.cs">
+      <DependentUpon>frmUnits.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRE\subForm\OutputDataForm\frm_backup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -642,6 +649,9 @@
     <Compile Include="WaitForm1.Designer.cs">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PRE\subForm\InputDataForm\frmUnits.resx">
+      <DependentUpon>frmUnits.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRE\subForm\OutputDataForm\frm_backup.resx">
       <DependentUpon>frm_backup.cs</DependentUpon>
     </EmbeddedResource>
@@ -871,6 +881,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ICON\risk summary point\Triangle-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coating32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ICON\navigation-bar-icon-19.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

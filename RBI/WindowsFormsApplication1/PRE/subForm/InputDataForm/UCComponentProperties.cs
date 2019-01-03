@@ -62,6 +62,25 @@ namespace RBI.PRE.subForm.InputDataForm
             additemsCorrectiveAction();
             ShowDatatoControl(ID);
         }
+        public UCComponentProperties(int ID, string diameterUnit, string thicknessUnit, string corrosionRateUnit)
+        {
+            InitializeComponent();
+            additemsBrinnellHardness();
+            additemsProtrusionComplexity();
+            additemsCyclicLoading();
+            additemsBranchDiameter();
+            additemsBranchJointType();
+            additemsNumberPipeFittings();
+            additemsPipeCondition();
+            additemsPreviousFailure();
+            additemsAmountShaking();
+            additemsAccumulatedTimeShaking();
+            additemsCorrectiveAction();
+            ShowDatatoControl(ID);
+            lblDiameter.Text = diameterUnit;
+            lblCurrentThickness.Text = lblbNominalThickness.Text = lblMinReqThickness.Text = thicknessUnit;
+            lblCorrosionRate.Text = corrosionRateUnit;
+        }
         public void ShowDatatoControl(int ID)
         {
             RW_COMPONENT_BUS comBus = new RW_COMPONENT_BUS();

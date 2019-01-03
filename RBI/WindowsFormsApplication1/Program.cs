@@ -33,7 +33,8 @@ namespace RBI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new test());
-            Application.Run(new RibbonForm1());
+            Application.Run(new RibbonForm1());//
+            //Application.Run(new frmUnits());
         }
     }
 }

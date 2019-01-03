@@ -18,6 +18,10 @@ namespace RBI.BUS.BUSMSSQL
         {
             DAL.edit(obj.UnitID, obj.UnitName, obj.SelectedUnit);
         }
+        public void edit(string unitName, string selectedUnit)
+        {
+            DAL.edit(unitName, selectedUnit);
+        }
         public void delete(UNITS obj)
         {
             DAL.delete(obj.UnitID);

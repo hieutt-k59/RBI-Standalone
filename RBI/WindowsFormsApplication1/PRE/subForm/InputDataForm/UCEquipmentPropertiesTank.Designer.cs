@@ -89,6 +89,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblDistance = new System.Windows.Forms.Label();
+            this.lblMinReqTem = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTypeSoild.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgColTypeOfSolid)).BeginInit();
@@ -107,6 +109,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblMinReqTem);
+            this.groupBox1.Controls.Add(this.lblDistance);
             this.groupBox1.Controls.Add(this.cbTypeSoild);
             this.groupBox1.Controls.Add(this.cbOnlineMonitoring);
             this.groupBox1.Controls.Add(this.cbEnvironmentalSensitivity);
@@ -788,7 +792,7 @@
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(687, 163);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 13);
+            this.label10.Size = new System.Drawing.Size(17, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "⁰C";
             // 
@@ -834,6 +838,28 @@
             this.label1.Size = new System.Drawing.Size(254, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrative Control for Upset Management";
+            // 
+            // lblDistance
+            // 
+            this.lblDistance.AutoSize = true;
+            this.lblDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDistance.ForeColor = System.Drawing.Color.Black;
+            this.lblDistance.Location = new System.Drawing.Point(716, 87);
+            this.lblDistance.Name = "lblDistance";
+            this.lblDistance.Size = new System.Drawing.Size(18, 15);
+            this.lblDistance.TabIndex = 50;
+            this.lblDistance.Text = "m";
+            // 
+            // lblMinReqTem
+            // 
+            this.lblMinReqTem.AutoSize = true;
+            this.lblMinReqTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinReqTem.ForeColor = System.Drawing.Color.Black;
+            this.lblMinReqTem.Location = new System.Drawing.Point(717, 166);
+            this.lblMinReqTem.Name = "lblMinReqTem";
+            this.lblMinReqTem.Size = new System.Drawing.Size(17, 13);
+            this.lblMinReqTem.TabIndex = 51;
+            this.lblMinReqTem.Text = "⁰C";
             // 
             // UCEquipmentPropertiesTank
             // 
@@ -922,5 +948,7 @@
         private DevExpress.Utils.ImageCollection imgThermalHist;
         private DevExpress.XtraEditors.ImageComboBoxEdit cbAdjustmentSettlement;
         private DevExpress.Utils.ImageCollection imgColAdjust;
+        private System.Windows.Forms.Label lblDistance;
+        private System.Windows.Forms.Label lblMinReqTem;
     }
 }

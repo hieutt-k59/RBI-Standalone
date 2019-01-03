@@ -79,6 +79,11 @@
             this.popImportExcel = new DevExpress.XtraBars.PopupMenu(this.components);
             this.btnImportInspection = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonGroup1 = new DevExpress.XtraBars.BarButtonGroup();
+            this.btnUnitSetting = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAssessmentMethod = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMainMenuAppearing = new DevExpress.XtraBars.BarButtonItem();
+            this.btnItemsTreeListAppearing = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,6 +92,9 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -129,6 +137,7 @@
             this.navGrRecord = new DevExpress.XtraNavBar.NavBarGroup();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::RBI.WaitForm1), true, true);
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popExportExcel)).BeginInit();
@@ -198,14 +207,20 @@
             this.btnImportInspection,
             this.btnNewEq,
             this.btnNewCom,
-            this.barStaticItem2});
+            this.barStaticItem2,
+            this.barButtonGroup1,
+            this.btnUnitSetting,
+            this.btnAssessmentMethod,
+            this.btnMainMenuAppearing,
+            this.btnItemsTreeListAppearing});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 28;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage5,
             this.ribbonPage4,
+            this.ribbonPage2,
             this.ribbonPage3});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMarqueeProgressBar1});
@@ -579,6 +594,46 @@
             this.barStaticItem2.Id = 18;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
+            // barButtonGroup1
+            // 
+            this.barButtonGroup1.Caption = "barButtonGroup1";
+            this.barButtonGroup1.Id = 22;
+            this.barButtonGroup1.Name = "barButtonGroup1";
+            // 
+            // btnUnitSetting
+            // 
+            this.btnUnitSetting.Caption = "Units";
+            this.btnUnitSetting.Id = 24;
+            this.btnUnitSetting.ImageOptions.Image = global::RBI.Properties.Resources.coating32x32;
+            this.btnUnitSetting.Name = "btnUnitSetting";
+            this.btnUnitSetting.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnUnitSetting.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUnitSetting_ItemClick);
+            // 
+            // btnAssessmentMethod
+            // 
+            this.btnAssessmentMethod.Caption = "Asssessment Method";
+            this.btnAssessmentMethod.Id = 25;
+            this.btnAssessmentMethod.ImageOptions.Image = global::RBI.Properties.Resources.all_report;
+            this.btnAssessmentMethod.Name = "btnAssessmentMethod";
+            this.btnAssessmentMethod.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnMainMenuAppearing
+            // 
+            this.btnMainMenuAppearing.Caption = "Main Menu";
+            this.btnMainMenuAppearing.Id = 26;
+            this.btnMainMenuAppearing.ImageOptions.Image = global::RBI.Properties.Resources.navigation_bar_icon_19;
+            this.btnMainMenuAppearing.Name = "btnMainMenuAppearing";
+            this.btnMainMenuAppearing.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnItemsTreeListAppearing
+            // 
+            this.btnItemsTreeListAppearing.Caption = "Items Tree List";
+            this.btnItemsTreeListAppearing.Id = 27;
+            this.btnItemsTreeListAppearing.ImageOptions.Image = global::RBI.Properties.Resources.navigation_bar_icon_19;
+            this.btnItemsTreeListAppearing.Name = "btnItemsTreeListAppearing";
+            this.btnItemsTreeListAppearing.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -639,6 +694,28 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem14);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Menu";
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup5});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "Setting";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnUnitSetting);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAssessmentMethod);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Program Settings";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnMainMenuAppearing);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnItemsTreeListAppearing);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "View Settings";
             // 
             // ribbonPage3
             // 
@@ -719,10 +796,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Dosis", 71.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 71.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(104, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(458, 122);
+            this.label1.Size = new System.Drawing.Size(523, 108);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cortek RBI";
             // 
@@ -1030,6 +1107,14 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "Main Menu";
+            this.barButtonItem16.Id = 17;
+            this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
+            this.barButtonItem16.Name = "barButtonItem16";
+            this.barButtonItem16.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // RibbonForm1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -1176,5 +1261,14 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraNavBar.NavBarItem navViewGraph;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
+        private DevExpress.XtraBars.BarButtonItem btnUnitSetting;
+        private DevExpress.XtraBars.BarButtonItem btnAssessmentMethod;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarButtonItem btnMainMenuAppearing;
+        private DevExpress.XtraBars.BarButtonItem btnItemsTreeListAppearing;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }

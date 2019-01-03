@@ -62,10 +62,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblEnvCost = new System.Windows.Forms.Label();
+            this.lblInjureCost = new System.Windows.Forms.Label();
+            this.lblProductionCost = new System.Windows.Forms.Label();
+            this.lblEqCost = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbMittigationSystem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsulationType.Properties)).BeginInit();
@@ -110,10 +110,10 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lblEnvCost);
+            this.groupBox1.Controls.Add(this.lblInjureCost);
+            this.groupBox1.Controls.Add(this.lblProductionCost);
+            this.groupBox1.Controls.Add(this.lblEqCost);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -488,49 +488,49 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "API Fluid";
             // 
-            // label25
+            // lblEnvCost
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(434, 148);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(47, 15);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "$/Event";
+            this.lblEnvCost.AutoSize = true;
+            this.lblEnvCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnvCost.ForeColor = System.Drawing.Color.Black;
+            this.lblEnvCost.Location = new System.Drawing.Point(434, 148);
+            this.lblEnvCost.Name = "lblEnvCost";
+            this.lblEnvCost.Size = new System.Drawing.Size(47, 15);
+            this.lblEnvCost.TabIndex = 0;
+            this.lblEnvCost.Text = "$/Event";
             // 
-            // label24
+            // lblInjureCost
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(434, 125);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(55, 15);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "$/Fatality";
+            this.lblInjureCost.AutoSize = true;
+            this.lblInjureCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInjureCost.ForeColor = System.Drawing.Color.Black;
+            this.lblInjureCost.Location = new System.Drawing.Point(434, 125);
+            this.lblInjureCost.Name = "lblInjureCost";
+            this.lblInjureCost.Size = new System.Drawing.Size(55, 15);
+            this.lblInjureCost.TabIndex = 0;
+            this.lblInjureCost.Text = "$/Fatality";
             // 
-            // label23
+            // lblProductionCost
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(434, 100);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(38, 15);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "$/Day";
+            this.lblProductionCost.AutoSize = true;
+            this.lblProductionCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductionCost.ForeColor = System.Drawing.Color.Black;
+            this.lblProductionCost.Location = new System.Drawing.Point(434, 100);
+            this.lblProductionCost.Name = "lblProductionCost";
+            this.lblProductionCost.Size = new System.Drawing.Size(38, 15);
+            this.lblProductionCost.TabIndex = 0;
+            this.lblProductionCost.Text = "$/Day";
             // 
-            // label6
+            // lblEqCost
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(434, 76);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "$/m2";
+            this.lblEqCost.AutoSize = true;
+            this.lblEqCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEqCost.ForeColor = System.Drawing.Color.Black;
+            this.lblEqCost.Location = new System.Drawing.Point(434, 76);
+            this.lblEqCost.Name = "lblEqCost";
+            this.lblEqCost.Size = new System.Drawing.Size(35, 15);
+            this.lblEqCost.TabIndex = 0;
+            this.lblEqCost.Text = "$/m2";
             // 
             // UCCA
             // 
@@ -580,10 +580,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblEnvCost;
+        private System.Windows.Forms.Label lblInjureCost;
+        private System.Windows.Forms.Label lblProductionCost;
+        private System.Windows.Forms.Label lblEqCost;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label34;

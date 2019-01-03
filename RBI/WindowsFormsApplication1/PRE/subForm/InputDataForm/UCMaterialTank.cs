@@ -40,6 +40,20 @@ namespace RBI.PRE.subForm.InputDataForm
             addPTAMterial();
             ShowDataToControl(ID);
         }
+        public UCMaterialTank(int ID, string temUnit, string pressureUnit, string stressUnit, string thicknessUnit, string corrosionUnit)
+        {
+            InitializeComponent();
+            txtMaterial.Enabled = false;
+            addSulfurContent();
+            addHeatTreatment();
+            addPTAMterial();
+            ShowDataToControl(ID);
+            lblAllowableStress.Text = stressUnit;
+            lblDesignPressure.Text = pressureUnit;
+            lblCorrosion.Text = corrosionUnit;
+            lblMaxDesignTem.Text = lblMinDesignTem.Text = lblRefTem.Text = temUnit;
+            lblBritFracGovThickness.Text = thicknessUnit;
+        }
         public void ShowDataToControl(int ID)
         {
             RW_MATERIAL_BUS BUS = new RW_MATERIAL_BUS();

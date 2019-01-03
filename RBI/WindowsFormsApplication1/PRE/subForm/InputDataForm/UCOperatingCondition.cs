@@ -24,7 +24,25 @@ namespace RBI.PRE.subForm.InputDataForm
             InitializeComponent();
             ShowDataToForm(ID);
         }
-        
+        public UCOperatingCondition(int ID, string temperatureUnit, string pressureUnit, string flowRateUnit)
+        {
+            InitializeComponent();
+            ShowDataToForm(ID);
+            switch (temperatureUnit)
+            {
+                case "DEG_C":
+                    lblCritExpoTem.Text = lblmaxOpTem.Text = lblMinOpTem.Text = "⁰C";
+                    break;
+                case "DEG_F":
+                    lblCritExpoTem.Text = lblmaxOpTem.Text = lblMinOpTem.Text = "⁰F";
+                    break;
+                case "K":
+                    lblCritExpoTem.Text = lblmaxOpTem.Text = lblMinOpTem.Text = "K";
+                    break;
+            }
+            lblMinOpPressure.Text = lblMaxOpPressure.Text = lblHydroPressure.Text = pressureUnit;
+            lblFlowRate.Text = flowRateUnit;
+        }
         RW_EXTCOR_TEMPERATURE objTemp = new RW_EXTCOR_TEMPERATURE();
         private void ShowDataToForm(int ID)
         {

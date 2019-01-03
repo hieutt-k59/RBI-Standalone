@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using RBI.Object.ObjectMSSQL;
 using RBI.BUS.BUSMSSQL;
 using RBI.Object;
+using RBI.BUS.BUSMSSQL_CAL;
+
 namespace RBI.PRE.subForm.InputDataForm
 {
     public partial class UCEquipmentProperties : UserControl
@@ -31,6 +33,42 @@ namespace RBI.PRE.subForm.InputDataForm
             ShowDatatoControl(ID);
         }
 
+        public UCEquipmentProperties(int ID, string temUnit, string volumeUnit)
+        {
+            InitializeComponent();
+            addItemsOnlineMonitoring();
+            addItemsExternalEnvironment();
+            addItemsThermalHistory();
+            ShowDatatoControl(ID, temUnit, volumeUnit);
+            changeUnit(temUnit, volumeUnit);
+        }
+
+        #region change unit
+        private void changeUnit(string temUnit, string volumeUnit)
+        {
+            switch (temUnit)
+            {
+                case "DEG_C":
+                    lblMinReqTem.Text = "⁰C";
+                    break;
+                case "DEG_F":
+                    lblMinReqTem.Text = "⁰F";
+                    break;
+                case "K":
+                    lblMinReqTem.Text = "K";
+                    break;
+            }
+            switch (volumeUnit)
+            {
+                case "m3":
+                    lblVolume.Text = "m³";
+                    break;
+                case "ft3":
+                    lblVolume.Text = "ft³";
+                    break;
+            }
+        }
+        #endregion
         #region Process Data
         public void ShowDatatoControl(int ID)
         {
@@ -81,8 +119,62 @@ namespace RBI.PRE.subForm.InputDataForm
                 }
             }
         }
+        public void ShowDatatoControl(int ID, string  temUnit, string volumeUnit)
+        {
+            RW_EQUIPMENT_BUS eqBus = new RW_EQUIPMENT_BUS();
+            BUS_UNITS convUnit = new BUS_UNITS();
+            List<RW_EQUIPMENT> listEq = eqBus.getDataSource();
+            foreach (RW_EQUIPMENT e in listEq)
+            {
+                if (e.ID == ID)
+                {
+                    chkAministrativeControl.Checked = e.AdminUpsetManagement == 1 ? true : false;
+                    chkHighlyEffectiveInspection.Checked = e.HighlyDeadlegInsp == 1 ? true : false;
+                    chkDowntimeProtection.Checked = e.DowntimeProtectionUsed == 1 ? true : false;
+                    chkHeatTraced.Checked = e.HeatTraced == 1 ? true : false;
+                    chkInterfaceSoilWater.Checked = e.InterfaceSoilWater == 1 ? true : false;
+                    chkEquipmentOperatingManyYear.Checked = e.YearLowestExpTemp == 1 ? true : false;
+                    chkMaterialExposedFluid.Checked = e.MaterialExposedToClExt == 1 ? true : false;
+                    chkPresenceSulphideOperation.Checked = e.PresenceSulphidesO2 == 1 ? true : false;
+                    chkContainsDeadlegs.Checked = e.ContainsDeadlegs == 1 ? true : false;
+                    chkCylicOperation.Checked = e.CyclicOperation == 1 ? true : false;
+                    chkSteamedOutPriorWaterFlushing.Checked = e.SteamOutWaterFlush == 1 ? true : false;
+                    chkPWHT.Checked = e.PWHT == 1 ? true : false;
+                    chkLinerOnlineMonitoring.Checked = e.LinerOnlineMonitoring == 1 ? true : false;
+                    chkPresenceSulphideShutdown.Checked = e.PresenceSulphidesO2Shutdown == 1 ? true : false;
+                    if (temUnit == "DEG_C") txtMinRequiredTemperature.Text = e.MinReqTemperaturePressurisation.ToString();
+                    else if (temUnit == "DEG_F") txtMinRequiredTemperature.Text = (convUnit.CelToFah(e.MinReqTemperaturePressurisation)).ToString();
+                    else txtMinRequiredTemperature.Text = (convUnit.CelToKenvin(e.MinReqTemperaturePressurisation)).ToString();
+                    for (int i = 0; i < itemsExternalEnvironment.Length; i++)
+                    {
+
+                        if (itemsExternalEnvironment[i] == e.ExternalEnvironment)
+                        {
+                            cbExternalEnvironment.SelectedIndex = i + 1;
+                        }
+                    }
+                    for (int j = 0; j < itemsOnlineMonitoring.Length; j++)
+                    {
+                        if (itemsOnlineMonitoring[j] == e.OnlineMonitoring)
+                        {
+                            cbOnlineMonitoring.SelectedIndex = j + 1;
+                        }
+                    }
+                    for (int i = 0; i < itemsThermalHistory.Length; i++)
+                    {
+                        if (itemsThermalHistory[i] == e.ThermalHistory)
+                        {
+                            cbThermalHistory.SelectedIndex = i + 1;
+                        }
+                    }
+                    if (volumeUnit == "m3") txtEquipmentVolume.Text = e.Volume.ToString();
+                    else if (volumeUnit == "ft3") txtEquipmentVolume.Text = (e.Volume * convUnit.ft3).ToString();
+                }
+            }
+        }
         EQUIPMENT_MASTER_BUS busEquipmentMaster = new EQUIPMENT_MASTER_BUS();
         FACILITY_BUS busFacility = new FACILITY_BUS();
+        
         public RW_EQUIPMENT getData(int ID)
         {
             RW_EQUIPMENT eq = new RW_EQUIPMENT();
@@ -99,6 +191,40 @@ namespace RBI.PRE.subForm.InputDataForm
             eq.LinerOnlineMonitoring = chkLinerOnlineMonitoring.Checked ? 1 : 0;
             eq.MaterialExposedToClExt = chkMaterialExposedFluid.Checked ? 1 : 0;
             eq.MinReqTemperaturePressurisation = txtMinRequiredTemperature.Text != "" ? float.Parse(txtMinRequiredTemperature.Text) : 0;
+            eq.OnlineMonitoring = cbOnlineMonitoring.Text;
+            eq.PresenceSulphidesO2 = chkPresenceSulphideOperation.Checked ? 1 : 0;
+            eq.PresenceSulphidesO2Shutdown = chkPresenceSulphideShutdown.Checked ? 1 : 0;
+            eq.PressurisationControlled = chkPressurisationControlled.Checked ? 1 : 0;
+            eq.PWHT = chkPWHT.Checked ? 1 : 0;
+            eq.SteamOutWaterFlush = chkSteamedOutPriorWaterFlushing.Checked ? 1 : 0;
+            int equipmentID = assBus.getEquipmentID(ID);
+            float FMS = busFacility.getFMS(busEquipmentMaster.getFacilityID(equipmentID));
+            eq.ManagementFactor = FMS;
+            eq.ThermalHistory = cbThermalHistory.Text;
+            eq.YearLowestExpTemp = chkEquipmentOperatingManyYear.Checked ? 1 : 0;
+            eq.Volume = txtEquipmentVolume.Text != "" ? float.Parse(txtEquipmentVolume.Text) : 0;
+            //eq.CommissionDate = 
+            return eq;
+        }
+        public RW_EQUIPMENT getData(int ID, string temUnit, string volUnit)
+        {
+            RW_EQUIPMENT eq = new RW_EQUIPMENT();
+            RW_ASSESSMENT_BUS assBus = new RW_ASSESSMENT_BUS();
+            eq.ID = ID;
+            eq.AdminUpsetManagement = chkAministrativeControl.Checked ? 1 : 0;
+            eq.ContainsDeadlegs = chkContainsDeadlegs.Checked ? 1 : 0;
+            eq.CyclicOperation = chkCylicOperation.Checked ? 1 : 0;
+            eq.HighlyDeadlegInsp = chkHighlyEffectiveInspection.Checked ? 1 : 0;
+            eq.DowntimeProtectionUsed = chkDowntimeProtection.Checked ? 1 : 0;
+            eq.ExternalEnvironment = cbExternalEnvironment.Text;
+            eq.HeatTraced = chkHeatTraced.Checked ? 1 : 0;
+            eq.InterfaceSoilWater = chkInterfaceSoilWater.Checked ? 1 : 0;
+            eq.LinerOnlineMonitoring = chkLinerOnlineMonitoring.Checked ? 1 : 0;
+            eq.MaterialExposedToClExt = chkMaterialExposedFluid.Checked ? 1 : 0;
+            double minReqTem = 0;
+            if (temUnit == "DEG_C") minReqTem = txtMinRequiredTemperature.Text != "" ? double.Parse(txtMinRequiredTemperature.Text) : 0;
+            else if (temUnit == "DEG_F") minReqTem = txtMinRequiredTemperature.Text != "" ? double.Parse(txtMinRequiredTemperature.Text) : 0;
+            eq.MinReqTemperaturePressurisation = (float)minReqTem;
             eq.OnlineMonitoring = cbOnlineMonitoring.Text;
             eq.PresenceSulphidesO2 = chkPresenceSulphideOperation.Checked ? 1 : 0;
             eq.PresenceSulphidesO2Shutdown = chkPresenceSulphideShutdown.Checked ? 1 : 0;
@@ -267,6 +393,6 @@ namespace RBI.PRE.subForm.InputDataForm
         private int ctrlSpress = 0;
         #endregion
 
-        
+
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaterial = new System.Windows.Forms.TextBox();
             this.cbPTAMaterialGrade = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.cbHeatTreatment = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.cbSulfurContent = new DevExpress.XtraEditors.ImageComboBoxEdit();
@@ -37,13 +38,13 @@
             this.chkIsPTASeverity = new System.Windows.Forms.CheckBox();
             this.chkChromium = new System.Windows.Forms.CheckBox();
             this.chkCarbonLowAlloySteel = new System.Windows.Forms.CheckBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblCorrosion = new System.Windows.Forms.Label();
+            this.lblBritFracGovThickness = new System.Windows.Forms.Label();
+            this.lblAllowableStress = new System.Windows.Forms.Label();
+            this.lblDesignPressure = new System.Windows.Forms.Label();
+            this.lblRefTem = new System.Windows.Forms.Label();
+            this.lblMinDesignTem = new System.Windows.Forms.Label();
+            this.lblMaxDesignTem = new System.Windows.Forms.Label();
             this.txtBrittleFracture = new System.Windows.Forms.TextBox();
             this.txtAllowableStress = new System.Windows.Forms.TextBox();
             this.txtReferenceTemperature = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaterial = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbPTAMaterialGrade.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbHeatTreatment.Properties)).BeginInit();
@@ -89,13 +89,13 @@
             this.groupBox1.Controls.Add(this.chkIsPTASeverity);
             this.groupBox1.Controls.Add(this.chkChromium);
             this.groupBox1.Controls.Add(this.chkCarbonLowAlloySteel);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lblCorrosion);
+            this.groupBox1.Controls.Add(this.lblBritFracGovThickness);
+            this.groupBox1.Controls.Add(this.lblAllowableStress);
+            this.groupBox1.Controls.Add(this.lblDesignPressure);
+            this.groupBox1.Controls.Add(this.lblRefTem);
+            this.groupBox1.Controls.Add(this.lblMinDesignTem);
+            this.groupBox1.Controls.Add(this.lblMaxDesignTem);
             this.groupBox1.Controls.Add(this.txtBrittleFracture);
             this.groupBox1.Controls.Add(this.txtAllowableStress);
             this.groupBox1.Controls.Add(this.txtReferenceTemperature);
@@ -132,6 +132,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Material";
             this.groupBox1.TextChanged += new System.EventHandler(this.txtMaterial_TextChanged);
+            // 
+            // txtMaterial
+            // 
+            this.txtMaterial.Location = new System.Drawing.Point(172, 24);
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.Size = new System.Drawing.Size(491, 22);
+            this.txtMaterial.TabIndex = 19;
+            this.txtMaterial.TextChanged += new System.EventHandler(this.txtMaterial_TextChanged);
+            this.txtMaterial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaterial_KeyDown);
             // 
             // cbPTAMaterialGrade
             // 
@@ -222,82 +231,82 @@
             this.chkCarbonLowAlloySteel.CheckedChanged += new System.EventHandler(this.txtMaterial_TextChanged);
             this.chkCarbonLowAlloySteel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaterial_KeyDown);
             // 
-            // label15
+            // lblCorrosion
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(316, 139);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 13);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "mm";
+            this.lblCorrosion.AutoSize = true;
+            this.lblCorrosion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrosion.ForeColor = System.Drawing.Color.Black;
+            this.lblCorrosion.Location = new System.Drawing.Point(316, 139);
+            this.lblCorrosion.Name = "lblCorrosion";
+            this.lblCorrosion.Size = new System.Drawing.Size(23, 13);
+            this.lblCorrosion.TabIndex = 3;
+            this.lblCorrosion.Text = "mm";
             // 
-            // label13
+            // lblBritFracGovThickness
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(669, 100);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 13);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "mm";
+            this.lblBritFracGovThickness.AutoSize = true;
+            this.lblBritFracGovThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBritFracGovThickness.ForeColor = System.Drawing.Color.Black;
+            this.lblBritFracGovThickness.Location = new System.Drawing.Point(669, 110);
+            this.lblBritFracGovThickness.Name = "lblBritFracGovThickness";
+            this.lblBritFracGovThickness.Size = new System.Drawing.Size(23, 13);
+            this.lblBritFracGovThickness.TabIndex = 3;
+            this.lblBritFracGovThickness.Text = "mm";
             // 
-            // label6
+            // lblAllowableStress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(316, 100);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "psi";
+            this.lblAllowableStress.AutoSize = true;
+            this.lblAllowableStress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllowableStress.ForeColor = System.Drawing.Color.Black;
+            this.lblAllowableStress.Location = new System.Drawing.Point(316, 110);
+            this.lblAllowableStress.Name = "lblAllowableStress";
+            this.lblAllowableStress.Size = new System.Drawing.Size(20, 13);
+            this.lblAllowableStress.TabIndex = 3;
+            this.lblAllowableStress.Text = "psi";
             // 
-            // label4
+            // lblDesignPressure
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(316, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "psi";
+            this.lblDesignPressure.AutoSize = true;
+            this.lblDesignPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesignPressure.ForeColor = System.Drawing.Color.Black;
+            this.lblDesignPressure.Location = new System.Drawing.Point(316, 77);
+            this.lblDesignPressure.Name = "lblDesignPressure";
+            this.lblDesignPressure.Size = new System.Drawing.Size(20, 13);
+            this.lblDesignPressure.TabIndex = 3;
+            this.lblDesignPressure.Text = "psi";
             // 
-            // label12
+            // lblRefTem
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(669, 77);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(18, 13);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "⁰C";
+            this.lblRefTem.AutoSize = true;
+            this.lblRefTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRefTem.ForeColor = System.Drawing.Color.Black;
+            this.lblRefTem.Location = new System.Drawing.Point(669, 81);
+            this.lblRefTem.Name = "lblRefTem";
+            this.lblRefTem.Size = new System.Drawing.Size(17, 13);
+            this.lblRefTem.TabIndex = 3;
+            this.lblRefTem.Text = "⁰C";
             // 
-            // label11
+            // lblMinDesignTem
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(669, 53);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "⁰C";
+            this.lblMinDesignTem.AutoSize = true;
+            this.lblMinDesignTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinDesignTem.ForeColor = System.Drawing.Color.Black;
+            this.lblMinDesignTem.Location = new System.Drawing.Point(669, 57);
+            this.lblMinDesignTem.Name = "lblMinDesignTem";
+            this.lblMinDesignTem.Size = new System.Drawing.Size(17, 13);
+            this.lblMinDesignTem.TabIndex = 3;
+            this.lblMinDesignTem.Text = "⁰C";
             // 
-            // label10
+            // lblMaxDesignTem
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(316, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "⁰C";
+            this.lblMaxDesignTem.AutoSize = true;
+            this.lblMaxDesignTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxDesignTem.ForeColor = System.Drawing.Color.Black;
+            this.lblMaxDesignTem.Location = new System.Drawing.Point(316, 55);
+            this.lblMaxDesignTem.Name = "lblMaxDesignTem";
+            this.lblMaxDesignTem.Size = new System.Drawing.Size(17, 13);
+            this.lblMaxDesignTem.TabIndex = 3;
+            this.lblMaxDesignTem.Text = "⁰C";
             // 
             // txtBrittleFracture
             // 
@@ -584,15 +593,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Material";
             // 
-            // txtMaterial
-            // 
-            this.txtMaterial.Location = new System.Drawing.Point(172, 24);
-            this.txtMaterial.Name = "txtMaterial";
-            this.txtMaterial.Size = new System.Drawing.Size(491, 22);
-            this.txtMaterial.TabIndex = 19;
-            this.txtMaterial.TextChanged += new System.EventHandler(this.txtMaterial_TextChanged);
-            this.txtMaterial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaterial_KeyDown);
-            // 
             // UCMaterialTank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,13 +620,13 @@
         private System.Windows.Forms.CheckBox chkIsPTASeverity;
         private System.Windows.Forms.CheckBox chkChromium;
         private System.Windows.Forms.CheckBox chkCarbonLowAlloySteel;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblCorrosion;
+        private System.Windows.Forms.Label lblBritFracGovThickness;
+        private System.Windows.Forms.Label lblAllowableStress;
+        private System.Windows.Forms.Label lblDesignPressure;
+        private System.Windows.Forms.Label lblRefTem;
+        private System.Windows.Forms.Label lblMinDesignTem;
+        private System.Windows.Forms.Label lblMaxDesignTem;
         private System.Windows.Forms.TextBox txtBrittleFracture;
         private System.Windows.Forms.TextBox txtAllowableStress;
         private System.Windows.Forms.TextBox txtReferenceTemperature;

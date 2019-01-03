@@ -77,7 +77,29 @@ namespace RBI.PRE.subForm.InputDataForm
             additemsEnvironmental();
             ShowDataToControl(ID);
             if (type == "Shell")
+            {
+                lblDistance.Enabled = false;
                 txtDistanceGroundWater.Enabled = false;
+            }
+        }
+        public UCEquipmentPropertiesTank(int ID, string type, string temUnit, string lengUnit)
+        {
+            InitializeComponent();
+            additemsAdjustmentSettlement();
+            additemsExternalEnvironment();
+            additemsOnlineMonitoring();
+            additemsThermalHistory();
+            additemsEnvironmental();
+            ShowDataToControl(ID);
+            if (temUnit == "DEG_C") lblMinReqTem.Text = "⁰C";
+            else if (temUnit == "DEG_F") lblMinReqTem.Text = "⁰F";
+            else lblMinReqTem.Text = "K";
+            lblDistance.Text = lengUnit;
+            if (type == "Shell")
+            {
+                txtDistanceGroundWater.Enabled = false;
+                lblDistance.Enabled = false;
+            }
         }
         public void ShowDataToControl(int ID)
         {

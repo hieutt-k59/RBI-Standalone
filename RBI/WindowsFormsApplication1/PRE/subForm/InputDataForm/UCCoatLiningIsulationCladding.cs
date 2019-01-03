@@ -23,6 +23,12 @@ namespace RBI.PRE.subForm.InputDataForm
             InitializeComponent();
             ShowDatatoControl(ID);
         }
+        public UCCoatLiningIsulationCladding(int ID, string corrosionRateUnit)
+        {
+            InitializeComponent();
+            ShowDatatoControl(ID);
+            lblCorrosionRate.Text = corrosionRateUnit;
+        }
         public void ShowDatatoControl(int ID)
         {
             RW_COATING_BUS BUS = new RW_COATING_BUS();

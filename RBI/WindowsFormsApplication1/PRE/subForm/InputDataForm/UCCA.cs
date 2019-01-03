@@ -89,6 +89,20 @@ namespace RBI.PRE.subForm.InputDataForm
             additemsIsulationType();
             ShowDataToControl(ID);
         }
+        public UCCA(int ID, string finacialUnit)
+        {
+            InitializeComponent();
+            additemsFluid();
+            additemsFluidPhase();
+            additemsDetectionType();
+            additemsMittigationSystem();
+            additemsIsulationType();
+            ShowDataToControl(ID);
+            lblEnvCost.Text = finacialUnit + "/Event";
+            lblEqCost.Text = finacialUnit + "/m2";
+            lblProductionCost.Text = finacialUnit + "/Day";
+            lblInjureCost.Text = finacialUnit + "/Fatality";
+        }
         private void ShowDataToControl(int ID)
         {
             RW_INPUT_CA_LEVEL_1_BUS caBus = new RW_INPUT_CA_LEVEL_1_BUS();

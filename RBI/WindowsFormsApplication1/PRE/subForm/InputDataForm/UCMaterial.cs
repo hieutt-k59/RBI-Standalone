@@ -44,6 +44,35 @@ namespace RBI.PRE.subForm.InputDataForm
             addPTAMterial();
             ShowDatatoControl(ID);
         }
+        public UCMaterial(int ID, string temperatureUnit, string pressureUnit, string stressUnit, string corrosionUnit, string thicknessUnit)
+        {
+            InitializeComponent();
+            cbHTHAMaterial.Enabled = false;
+            txtMaterial.Enabled = false;
+            addSulfurContent();
+            addMaterialGradeHTHA();
+            addHeatTreatment();
+            addPTAMterial();
+            ShowDatatoControl(ID);
+            lblAllowableStress.Text = stressUnit;
+            lblDesignPressure.Text = pressureUnit;
+            lblCorrosion.Text = corrosionUnit;
+            lblGoverningThickness.Text = thicknessUnit;
+            string tem;
+            switch (temperatureUnit)
+            {
+                case "DEG_C":
+                    tem = "⁰C";
+                    break;
+                case "DEG_F":
+                    tem = "⁰F";
+                    break;
+                default:
+                    tem = "K";
+                    break;
+            }
+            lblMaxDesignTem.Text = lblMinDesignTem.Text = lblRefTem.Text = tem;
+        }
         public void ShowDatatoControl(int id)
         {
             RW_MATERIAL_BUS BUS = new RW_MATERIAL_BUS();

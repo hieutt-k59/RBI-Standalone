@@ -60,13 +60,13 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtOp8 = new System.Windows.Forms.TextBox();
             this.txtOp12 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblCritExpoTem = new System.Windows.Forms.Label();
+            this.lblMinOpTem = new System.Windows.Forms.Label();
+            this.lblFlowRate = new System.Windows.Forms.Label();
+            this.lblMinOpPressure = new System.Windows.Forms.Label();
+            this.lblMaxOpPressure = new System.Windows.Forms.Label();
+            this.lblmaxOpTem = new System.Windows.Forms.Label();
+            this.lblHydroPressure = new System.Windows.Forms.Label();
             this.txtCriticalExposure = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOperatingHydrogen = new System.Windows.Forms.TextBox();
@@ -88,13 +88,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblCritExpoTem);
+            this.groupBox1.Controls.Add(this.lblMinOpTem);
+            this.groupBox1.Controls.Add(this.lblFlowRate);
+            this.groupBox1.Controls.Add(this.lblMinOpPressure);
+            this.groupBox1.Controls.Add(this.lblMaxOpPressure);
+            this.groupBox1.Controls.Add(this.lblmaxOpTem);
+            this.groupBox1.Controls.Add(this.lblHydroPressure);
             this.groupBox1.Controls.Add(this.txtCriticalExposure);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtOperatingHydrogen);
@@ -218,7 +218,7 @@
             this.label30.ForeColor = System.Drawing.Color.Black;
             this.label30.Location = new System.Drawing.Point(17, 257);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(174, 15);
+            this.label30.Size = new System.Drawing.Size(173, 15);
             this.label30.TabIndex = 3;
             this.label30.Text = "% Operating at 176⁰C or above";
             // 
@@ -229,7 +229,7 @@
             this.label31.ForeColor = System.Drawing.Color.Black;
             this.label31.Location = new System.Drawing.Point(17, 231);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(173, 15);
+            this.label31.Size = new System.Drawing.Size(171, 15);
             this.label31.TabIndex = 4;
             this.label31.Text = "% Operating at 162⁰C to 176⁰C";
             // 
@@ -240,7 +240,7 @@
             this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(19, 205);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(173, 15);
+            this.label32.Size = new System.Drawing.Size(171, 15);
             this.label32.TabIndex = 5;
             this.label32.Text = "% Operating at 135⁰C to 162⁰C";
             // 
@@ -251,7 +251,7 @@
             this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(19, 181);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(173, 15);
+            this.label33.Size = new System.Drawing.Size(171, 15);
             this.label33.TabIndex = 6;
             this.label33.Text = "% Operating at 121⁰C to 135⁰C";
             // 
@@ -295,7 +295,7 @@
             this.label34.ForeColor = System.Drawing.Color.Black;
             this.label34.Location = new System.Drawing.Point(19, 155);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(173, 15);
+            this.label34.Size = new System.Drawing.Size(171, 15);
             this.label34.TabIndex = 7;
             this.label34.Text = "% Operating at 107⁰C to 121⁰C";
             // 
@@ -378,7 +378,7 @@
             this.label21.ForeColor = System.Drawing.Color.Black;
             this.label21.Location = new System.Drawing.Point(17, 132);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(166, 15);
+            this.label21.Size = new System.Drawing.Size(164, 15);
             this.label21.TabIndex = 0;
             this.label21.Text = "% Operating at 71⁰C to 107⁰C";
             // 
@@ -389,7 +389,7 @@
             this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(17, 106);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(162, 15);
+            this.label23.Size = new System.Drawing.Size(160, 15);
             this.label23.TabIndex = 0;
             this.label23.Text = "% Operating at 32 ⁰C to 71⁰C";
             // 
@@ -400,7 +400,7 @@
             this.label19.ForeColor = System.Drawing.Color.Black;
             this.label19.Location = new System.Drawing.Point(19, 80);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(158, 15);
+            this.label19.Size = new System.Drawing.Size(156, 15);
             this.label19.TabIndex = 0;
             this.label19.Text = "% Operating at 6 ⁰C to 32 ⁰C";
             // 
@@ -411,7 +411,7 @@
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(19, 56);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(155, 15);
+            this.label17.Size = new System.Drawing.Size(153, 15);
             this.label17.TabIndex = 0;
             this.label17.Text = "% Operating at -8 ⁰C to 6 ⁰C";
             // 
@@ -455,7 +455,7 @@
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(19, 30);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(166, 15);
+            this.label15.Size = new System.Drawing.Size(164, 15);
             this.label15.TabIndex = 0;
             this.label15.Text = "% Operating at -12 ⁰C to -8 ⁰C";
             // 
@@ -481,81 +481,81 @@
             this.txtOp12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaximumOperatingTemp_KeyDown);
             this.txtOp12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOp12_KeyPress);
             // 
-            // label7
+            // lblCritExpoTem
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(364, 106);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 15);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "⁰C";
+            this.lblCritExpoTem.AutoSize = true;
+            this.lblCritExpoTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCritExpoTem.ForeColor = System.Drawing.Color.Black;
+            this.lblCritExpoTem.Location = new System.Drawing.Point(364, 106);
+            this.lblCritExpoTem.Name = "lblCritExpoTem";
+            this.lblCritExpoTem.Size = new System.Drawing.Size(18, 15);
+            this.lblCritExpoTem.TabIndex = 3;
+            this.lblCritExpoTem.Text = "⁰C";
             // 
-            // label6
+            // lblMinOpTem
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(364, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 15);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "⁰C";
+            this.lblMinOpTem.AutoSize = true;
+            this.lblMinOpTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinOpTem.ForeColor = System.Drawing.Color.Black;
+            this.lblMinOpTem.Location = new System.Drawing.Point(364, 54);
+            this.lblMinOpTem.Name = "lblMinOpTem";
+            this.lblMinOpTem.Size = new System.Drawing.Size(18, 15);
+            this.lblMinOpTem.TabIndex = 3;
+            this.lblMinOpTem.Text = "⁰C";
             // 
-            // label14
+            // lblFlowRate
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(718, 80);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "m3/hr";
+            this.lblFlowRate.AutoSize = true;
+            this.lblFlowRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlowRate.ForeColor = System.Drawing.Color.Black;
+            this.lblFlowRate.Location = new System.Drawing.Point(718, 80);
+            this.lblFlowRate.Name = "lblFlowRate";
+            this.lblFlowRate.Size = new System.Drawing.Size(39, 15);
+            this.lblFlowRate.TabIndex = 3;
+            this.lblFlowRate.Text = "m3/hr";
             // 
-            // label12
+            // lblMinOpPressure
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(718, 54);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 15);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "psi";
+            this.lblMinOpPressure.AutoSize = true;
+            this.lblMinOpPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinOpPressure.ForeColor = System.Drawing.Color.Black;
+            this.lblMinOpPressure.Location = new System.Drawing.Point(718, 54);
+            this.lblMinOpPressure.Name = "lblMinOpPressure";
+            this.lblMinOpPressure.Size = new System.Drawing.Size(23, 15);
+            this.lblMinOpPressure.TabIndex = 3;
+            this.lblMinOpPressure.Text = "psi";
             // 
-            // label9
+            // lblMaxOpPressure
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(718, 28);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 15);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "psi";
+            this.lblMaxOpPressure.AutoSize = true;
+            this.lblMaxOpPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxOpPressure.ForeColor = System.Drawing.Color.Black;
+            this.lblMaxOpPressure.Location = new System.Drawing.Point(718, 28);
+            this.lblMaxOpPressure.Name = "lblMaxOpPressure";
+            this.lblMaxOpPressure.Size = new System.Drawing.Size(23, 15);
+            this.lblMaxOpPressure.TabIndex = 3;
+            this.lblMaxOpPressure.Text = "psi";
             // 
-            // label10
+            // lblmaxOpTem
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(364, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 15);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "⁰C";
+            this.lblmaxOpTem.AutoSize = true;
+            this.lblmaxOpTem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmaxOpTem.ForeColor = System.Drawing.Color.Black;
+            this.lblmaxOpTem.Location = new System.Drawing.Point(364, 28);
+            this.lblmaxOpTem.Name = "lblmaxOpTem";
+            this.lblmaxOpTem.Size = new System.Drawing.Size(18, 15);
+            this.lblmaxOpTem.TabIndex = 3;
+            this.lblmaxOpTem.Text = "⁰C";
             // 
-            // label5
+            // lblHydroPressure
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(364, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 15);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "psi";
+            this.lblHydroPressure.AutoSize = true;
+            this.lblHydroPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHydroPressure.Location = new System.Drawing.Point(364, 80);
+            this.lblHydroPressure.Name = "lblHydroPressure";
+            this.lblHydroPressure.Size = new System.Drawing.Size(23, 15);
+            this.lblHydroPressure.TabIndex = 2;
+            this.lblHydroPressure.Text = "psi";
             // 
             // txtCriticalExposure
             // 
@@ -729,7 +729,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblHydroPressure;
         private System.Windows.Forms.TextBox txtCriticalExposure;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtOperatingHydrogen;
@@ -738,8 +738,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaximumOperatingTemp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMinOpTem;
+        private System.Windows.Forms.Label lblmaxOpTem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -771,10 +771,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtOp8;
         private System.Windows.Forms.TextBox txtOp12;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblCritExpoTem;
+        private System.Windows.Forms.Label lblFlowRate;
+        private System.Windows.Forms.Label lblMinOpPressure;
+        private System.Windows.Forms.Label lblMaxOpPressure;
         private System.Windows.Forms.TextBox txtFlowRate;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtMinOperatingPressure;

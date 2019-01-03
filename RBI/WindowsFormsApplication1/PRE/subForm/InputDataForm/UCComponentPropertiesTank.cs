@@ -36,6 +36,21 @@ namespace RBI.PRE.subForm.InputDataForm
             else
                 txtShellCourseHeight.Enabled = false;
         }
+        public UCComponentPropertiesTank(int ID, string type, string diameterUnit, string thicknessUnit, string corrosionRate)
+        {
+            InitializeComponent();
+            ShowDataToControl(ID);
+            lblTankDiameter.Text = diameterUnit;
+            lblNominalThickness.Text = lblMinReqThickness.Text = lblCurrentThickness.Text = thicknessUnit;
+            lblCorrosionRate.Text = corrosionRate;
+            if (type == "Shell")
+            {
+                chkConcreteAsphalt.Enabled = false;
+                chkPreventionBarrier.Enabled = false;
+            }
+            else
+                txtShellCourseHeight.Enabled = false;
+        }
         private void ShowDataToControl(int ID)
         {
             RW_COMPONENT_BUS busCom = new RW_COMPONENT_BUS();

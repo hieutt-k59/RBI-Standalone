@@ -44,6 +44,7 @@ namespace RBI
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
             initDataforTreeList();
+            initScheme();
             treeListProject.OptionsBehavior.Editable = false;
             treeListProject.OptionsView.ShowIndicator = false;
             treeListProject.OptionsView.ShowColumns = false;
@@ -53,6 +54,49 @@ namespace RBI
             InitDictionaryDMMachenism();
             barStaticItem2.Caption = "Ready";
             SplashScreenManager.CloseForm();
+        }
+        private void initScheme()
+        {
+            listUnit = busUnit.getDataSource();
+            foreach (UNITS obj in listUnit)
+            {
+                switch (obj.UnitName)
+                {
+                    case "Pressure":
+                        pressure = obj.SelectedUnit;
+                        break;
+                    case "Stress":
+                        stress = obj.SelectedUnit;
+                        break;
+                    case "Temperature":
+                        temperature = obj.SelectedUnit;
+                        break;
+                    case "Diameter":
+                        diameter = obj.SelectedUnit;
+                        break;
+                    case "Thickness":
+                        thickness = obj.SelectedUnit;
+                        break;
+                    case "Dimensions":
+                        dimension = obj.SelectedUnit;
+                        break;
+                    case "Volume":
+                        volume = obj.SelectedUnit;
+                        break;
+                    case "FlowRate":
+                        flowRate = obj.SelectedUnit;
+                        break;
+                    case "Corrosion":
+                        corrosion = obj.SelectedUnit;
+                        break;
+                    case "CorrosionRate":
+                        corrosionRate = obj.SelectedUnit;
+                        break;
+                    case "FinacialUnit":
+                        finacialUnit = obj.SelectedUnit;
+                        break;
+                }
+            }
         }
         private void RibbonForm1_Load(object sender, EventArgs e)
         {
@@ -262,6 +306,14 @@ namespace RBI
                     previousUC[tabPageIndex] = resultRisk;
                     showUCinTabpage(resultRisk);
                 }
+
+                navRiskFactor.Appearance.ForeColor = Color.Red;
+                navEquipment.Appearance.ForeColor = navComponent.Appearance.ForeColor =
+                    navOperating.Appearance.ForeColor = navMaterial.Appearance.ForeColor =
+                    navCoating.Appearance.ForeColor = navNoInspection.Appearance.ForeColor =
+                    navStream.Appearance.ForeColor = navAssessmentInfo.Appearance.ForeColor =
+                    navCA.Appearance.ForeColor = navRiskSummary.Appearance.ForeColor =
+                    navViewGraph.Appearance.ForeColor = Color.Black;
                 SplashScreenManager.CloseForm();
             }
             catch (Exception ex)
@@ -1039,13 +1091,13 @@ namespace RBI
                     if (EquipmentTypeName != "Tank")
                     {
                         UCAssessmentInfo _ass = new UCAssessmentInfo(IDProposal);
-                        UCEquipmentProperties equipment = new UCEquipmentProperties(IDProposal);
-                        UCComponentProperties component = new UCComponentProperties(IDProposal);
-                        UCOperatingCondition op = new UCOperatingCondition(IDProposal);
-                        UCCoatLiningIsulationCladding coat = new UCCoatLiningIsulationCladding(IDProposal);
-                        UCMaterial material = new UCMaterial(IDProposal);
+                        UCEquipmentProperties equipment = new UCEquipmentProperties(IDProposal, temperature, volume);
+                        UCComponentProperties component = new UCComponentProperties(IDProposal, diameter, thickness, corrosionRate);
+                        UCOperatingCondition op = new UCOperatingCondition(IDProposal, temperature, pressure, flowRate);
+                        UCCoatLiningIsulationCladding coat = new UCCoatLiningIsulationCladding(IDProposal, corrosionRate);
+                        UCMaterial material = new UCMaterial(IDProposal, temperature, pressure, stress, corrosion, thickness);
                         UCStream stream = new UCStream(IDProposal);
-                        UCCA ca =  new UCCA(IDProposal);
+                        UCCA ca =  new UCCA(IDProposal, finacialUnit);
                         UCRiskFactor riskFactor = new UCRiskFactor(IDProposal);
                         UCRiskSummary riskSummary =  new UCRiskSummary(IDProposal);
                         UCDrawGraph drawGraph =  new UCDrawGraph(IDProposal);
@@ -1101,10 +1153,10 @@ namespace RBI
                         /**************************************/
                         UCAssessmentInfo ass = new UCAssessmentInfo(IDProposal);
                         UCEquipmentPropertiesTank eq = new UCEquipmentPropertiesTank(IDProposal, type);
-                        UCComponentPropertiesTank com = new UCComponentPropertiesTank(IDProposal, type);
+                        UCComponentPropertiesTank com = new UCComponentPropertiesTank(IDProposal, type, diameter, thickness, corrosionRate);
                         UCOperatingCondition op = new UCOperatingCondition(IDProposal);
                         UCCoatLiningIsulationCladding coat = new UCCoatLiningIsulationCladding(IDProposal);
-                        UCMaterialTank material = new UCMaterialTank(IDProposal);
+                        UCMaterialTank material = new UCMaterialTank(IDProposal, temperature, pressure, stress, thickness, corrosion);
                         UCStreamTank stream = new UCStreamTank(IDProposal);
 
                         ass.DataChanged += ThayDoiDuLieu;
@@ -1175,6 +1227,7 @@ namespace RBI
                 default:
                     break;
             }
+            Console.WriteLine("ID Node: " + IDNodeTreeList);
 
             if (e.Menu is TreeListNodeMenu)
             {
@@ -1285,7 +1338,7 @@ namespace RBI
                     break;
                 case "UCEquipmentProperties":
                     UCEquipmentProperties eq = uc as UCEquipmentProperties;
-                    RW_EQUIPMENT rwEq = eq.getData(ID);
+                    RW_EQUIPMENT rwEq = eq.getData(ID, temperature, volume);
                     busEquipment.edit(rwEq);
                     break;
                 case "UCEquipmentPropertiesTank":
@@ -1401,7 +1454,6 @@ namespace RBI
             String equipmentTypename = busEquipmentType.getEquipmentTypeName(busEquipmentMaster.getEquipmentTypeID(equipmentID));
             int apiID = busComponentMaster.getAPIComponentTypeID(equipmentID);
             string API_ComponentType_Name = busApiComponentType.getAPIComponentTypeName(apiID);
-            
             MSSQL_DM_CAL cal = new MSSQL_DM_CAL();
             cal.APIComponentType = API_ComponentType_Name;
             //<input thinning>
@@ -1978,11 +2030,11 @@ namespace RBI
                 DFtotal[i-1] = maxSCC + maxExt + maxThin + tempDf[15] + maxBritt;
                 risk[i - 1] = fullpof.FMS * fullpof.GFFTotal * DFtotal[i - 1] * FC;
             }
-            for (int i = 1; i < 16; i++ )
+            for (int i = 0; i < 15; i++ )
             {
-                if (DFtotal[i-1] >= DF_thamchieu)
+                if (DFtotal[i] >= DF_thamchieu)
                 {
-                    k = i;
+                    k = i == 0 ? 0 : i + 1;
                     break;
                 }
             }
@@ -3260,6 +3312,32 @@ namespace RBI
                                  "Chloride Stress Corrosion Cracking Under Insulation", "High Temperature Hydrogen Attack",
                                  "Brittle Fracture", "Temper Embrittlement", "885F Embrittlement", "Sigma Phase Embrittlement",
                                  "Vibration-Induced Mechanical Fatigue" };
+        private String[] UnitName = {
+            "Pressure",
+            "Stress",
+            "Temperature",
+            "Diameter",
+            "Thickness",
+            "Dimensions",
+            "Volume",
+            "FlowRate",
+            "Corrosion",
+            "CorrosionRate",
+            "FinacialUnit"
+        };
+        #region Unit String
+        string pressure = "";
+        string stress = "";
+        string temperature = "";
+        string diameter = "";
+        string dimension = "";
+        string volume = "";
+        string thickness = "";
+        string corrosion = "";
+        string corrosionRate = "";
+        string flowRate = "";
+        string finacialUnit = "";
+        #endregion
         private Dictionary<int, string> damageMachenism = new Dictionary<int, string>();
         //</input DM>
 
@@ -3275,6 +3353,8 @@ namespace RBI
         private List<TestData> listTree1 = null;
         private int IDProposal = 0;
         private bool checkTank = false;
+        private List<UNITS> listUnit = new List<UNITS>();
+        UNITS_BUS busUnit = new UNITS_BUS();
         //</treeListProject_MouseDoubleClick>
 
         //<initDataforTreeList>
@@ -3318,9 +3398,16 @@ namespace RBI
         RW_INSPECTION_HISTORY_BUS busInspectionHistory = new RW_INSPECTION_HISTORY_BUS();
         FACILITY_RISK_TARGET_BUS busRiskTarget = new FACILITY_RISK_TARGET_BUS();
         RW_DAMAGE_MECHANISM_BUS busDamageMechanism = new RW_DAMAGE_MECHANISM_BUS();
-        RW_RISK_GRAPH_BUS busRiskGraph = new RW_RISK_GRAPH_BUS();        
+        RW_RISK_GRAPH_BUS busRiskGraph = new RW_RISK_GRAPH_BUS();
         //</BUS>
         #endregion
 
+        private void btnUnitSetting_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmUnits uf = new frmUnits();
+            uf.ShowInTaskbar = false;
+            uf.ShowDialog();
+            if (uf.ButtonOKClicked) initScheme();
+        }
     }
 }

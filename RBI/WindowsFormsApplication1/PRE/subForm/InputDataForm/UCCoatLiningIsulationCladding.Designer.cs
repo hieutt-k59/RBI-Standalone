@@ -53,7 +53,7 @@
             this.chkInternalLining = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtCladdingCorrosionRate = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCorrosionRate = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.chkInternalCladding = new System.Windows.Forms.CheckBox();
@@ -369,7 +369,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.txtCladdingCorrosionRate);
-            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.lblCorrosionRate);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.chkInternalCladding);
@@ -392,15 +392,15 @@
             this.txtCladdingCorrosionRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chkInternalCoat_KeyDown);
             this.txtCladdingCorrosionRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCladdingCorrosionRate_KeyPress);
             // 
-            // label8
+            // lblCorrosionRate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(515, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 15);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "mm/yr";
+            this.lblCorrosionRate.AutoSize = true;
+            this.lblCorrosionRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrosionRate.Location = new System.Drawing.Point(515, 19);
+            this.lblCorrosionRate.Name = "lblCorrosionRate";
+            this.lblCorrosionRate.Size = new System.Drawing.Size(41, 15);
+            this.lblCorrosionRate.TabIndex = 0;
+            this.lblCorrosionRate.Text = "mm/yr";
             // 
             // label7
             // 
@@ -634,7 +634,7 @@
         private System.Windows.Forms.CheckBox chkInternalLining;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtCladdingCorrosionRate;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCorrosionRate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkInternalCladding;
